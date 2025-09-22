@@ -3,6 +3,8 @@ import { useNavigate, useOutletContext } from 'react-router-dom';
 import './Signin.css';
 import { callApi, setSession } from './api';
 
+const base_url = "http://localhost:8085"; // Change this when deploying
+
 export default function Signin() {
   const navigate = useNavigate();
   const { setLoggedIn, setUsername, setRole } = useOutletContext(); // ✅ get setters
@@ -18,7 +20,7 @@ export default function Signin() {
       return;
     }
 
-    callApi('POST', 'http://localhost:8085/users/signin', JSON.stringify(form), handleResponse);
+    callApi('POST', `${base_url}/users/signin`, JSON.stringify(form), handleResponse);
   };
 
   const handleResponse = (res) => {
