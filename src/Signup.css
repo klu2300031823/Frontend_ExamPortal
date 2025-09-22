@@ -1,0 +1,210 @@
+/* Reset body and center everything vertically */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: whitesmoke; /* Light grey */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Wrapper to hold left (form) and right (quote) side-by-side */
+  .signup-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 100px;
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+    flex-wrap: wrap; /* for responsiveness */
+  }
+  
+  /* Left Side (Signup Box) */
+  .signup-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    background-color: transparent;
+    box-shadow: none;
+    flex-wrap: wrap;
+  }
+  
+  
+  /* Logo */
+  .logo {
+    padding: -40px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #4d5dfa;
+  }
+  
+  /* Heading & description */
+  .signup-box h2 {
+    margin-bottom: 10px;
+  }
+  
+  .signup-box p {
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Form labels */
+  .signup-box label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 500;
+    color: #333;
+    text-align: left;
+  }
+  
+  /* Form inputs */
+  .signup-box input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    outline: none;
+  }
+  
+  /* Sign Up Button */
+  .signup-btn {
+    width: 100%;
+    background-color: #4d5dfa;
+    color: white;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .signup-btn:hover {
+    background-color: #3b4de0;
+  }
+  
+  /* OR divider */
+  .or {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  /* Social buttons */
+  .social-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .google-btn,
+  .facebook-btn {
+    flex: 1;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .google-btn {
+    background-color: #ea4335;
+    color: white;
+  }
+  
+  .facebook-btn {
+    background-color: #3b5998;
+    color: white;
+  }
+  
+  /* Sign-in link */
+  .signin-link {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 15px;
+    color: #555;
+  }
+  
+  .signin-link a {
+    color: #4d5dfa;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Right Side (Quote Box) */
+  .quote-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    padding-top: 280px;
+    margin-left: 40px; 
+    background-color: whitesmoke;
+    border-radius: 20px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Quote styling */
+  .quote {
+    font-size: 24px;
+    font-weight: 500;
+    color: #4d5dfa;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  .quote span {
+    font-size: 28px;
+    vertical-align: middle;
+  }
+  
+  .signup-left {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .signup-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .role-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px; /* spacing between User and Admin */
+    margin: 10px 0 15px 0;
+  }
+  
+  .role-selection label {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #1e3a8a; /* Dark blue */
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .role-selection input[type="radio"] {
+    margin-right: 5px;
+  }
+  
