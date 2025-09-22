@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./UserPanel.css";
 
+const base_url = "http://localhost:8085"; // Change this URL when deploying
+
 export default function UserPanel({ token }) {
   const username = localStorage.getItem("username");
 
@@ -31,7 +33,7 @@ export default function UserPanel({ token }) {
   useEffect(() => {
     if (started && questions.length === 0) {
       axios
-        .get("http://localhost:8085/api/exam/questions", {
+        .get(`${base_url}/api/exam/questions`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {
@@ -69,7 +71,7 @@ export default function UserPanel({ token }) {
   useEffect(() => {
     if (view === "history") {
       axios
-        .get(`http://localhost:8085/api/exam/results/${username}`, {
+        .get(`${base_url}/api/exam/results/${username}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setHistory(res.data))
@@ -89,7 +91,7 @@ export default function UserPanel({ token }) {
 
     try {
       const res = await axios.post(
-        "http://localhost:8085/api/exam/submit",
+        `${base_url}/api/exam/submit`,
         data,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -110,35 +112,35 @@ export default function UserPanel({ token }) {
       <div className="dashboard-screen">
         <h2>User Exam Dashboard</h2>
         <div 
-  style={{
-    padding: "30px",
-    margin: "30px auto",
-    textAlign: "center",
-    maxWidth: "750px",
-    background: "linear-gradient(135deg, #6dd5fa, #ffffff)",
-    borderRadius: "15px",
-    boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
-    borderTop: "5px solid #2196f3",
-    transition: "transform 0.3s, box-shadow 0.3s",
-    cursor: "default"
-  }}
-  onMouseEnter={e => {
-    e.currentTarget.style.transform = "scale(1.03)";
-    e.currentTarget.style.boxShadow = "0 12px 30px rgba(0,0,0,0.2)";
-  }}
-  onMouseLeave={e => {
-    e.currentTarget.style.transform = "scale(1)";
-    e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.15)";
-  }}
->
-  <h2 style={{ fontSize: "32px", color: "#0d47a1", marginBottom: "15px", fontWeight: "700" }}>
-    Welcome, {username} 👋
-  </h2>
-  <p style={{ fontSize: "18px", color: "#333", lineHeight: "1.7", margin: "0 20px" }}>
-    You are now logged into your User Dashboard. Take your exams, track your progress, and view 
-    your history. Complete your tests within the allotted time to achieve your best results. Good luck!
-  </p>
-</div>
+          style={{
+            padding: "30px",
+            margin: "30px auto",
+            textAlign: "center",
+            maxWidth: "750px",
+            background: "linear-gradient(135deg, #6dd5fa, #ffffff)",
+            borderRadius: "15px",
+            boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
+            borderTop: "5px solid #2196f3",
+            transition: "transform 0.3s, box-shadow 0.3s",
+            cursor: "default"
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.transform = "scale(1.03)";
+            e.currentTarget.style.boxShadow = "0 12px 30px rgba(0,0,0,0.2)";
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.transform = "scale(1)";
+            e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.15)";
+          }}
+        >
+          <h2 style={{ fontSize: "32px", color: "#0d47a1", marginBottom: "15px", fontWeight: "700" }}>
+            Welcome, {username} 👋
+          </h2>
+          <p style={{ fontSize: "18px", color: "#333", lineHeight: "1.7", margin: "0 20px" }}>
+            You are now logged into your User Dashboard. Take your exams, track your progress, and view 
+            your history. Complete your tests within the allotted time to achieve your best results. Good luck!
+          </p>
+        </div>
 
         <div className="dashboard-buttons">
           <button
