@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./AdminPanel.css";
 
-const base_url = "http://localhost:8085"; // Change this when deploying
+const base_url = "http://13.222.128.69:8085"; // Change this when deploying
 
 export default function AdminPanel({ token }) {
   const [view, setView] = useState("dashboard"); // initial dashboard
