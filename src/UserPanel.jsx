@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./UserPanel.css";
 
-const base_url = "http://18.232.149.35:8085"; // Change this URL when deploying
+const base_url = "http://34.207.235.55:8085"; // Change this URL when deploying
 
 export default function UserPanel({ token }) {
   const username = localStorage.getItem("username");
