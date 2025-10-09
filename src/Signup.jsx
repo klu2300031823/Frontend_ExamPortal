@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { callApi } from './api';
 import './Signup.css';
 
-const base_url = "http://18.232.149.35:8085"; // Change this when deploying
+const base_url = "http://34.207.235.55:8085"; // Change this when deploying
 
 export default function Signup() {
   const navigate = useNavigate();
