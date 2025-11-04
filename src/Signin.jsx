@@ -3,7 +3,7 @@ import { useNavigate, useOutletContext } from 'react-router-dom';
 import './Signin.css';
 import { callApi, setSession } from './api';
 
-const base_url = "http://34.207.235.55:8085"; // Change this when deploying
+const base_url = "http://54.145.40.103:8085"; // Change this when deploying
 
 export default function Signin() {
   const navigate = useNavigate();
